@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Прайс-лист | Доктор Анастасия Старикова (@cosmostar)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+  :root {
+    --bg-page: #fbf5f6;
+    --card-bg: #ffffff;
+    --rose-accent: #be185d;
+    --rose-deep: #831843;
+    --rose-gold: #b45309;
+    --rose-soft: #f472b6;
+    --rose-light: #fff1f2;
+    --rose-border: #fce7f3;
+    --text-main: #1f2937;
+    --text-muted: #6b7280;
+  }
+
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  body {
+    background: var(--bg-page);
+    background: radial-gradient(circle at 10% 10%, #fdf2f4 0%, #fae8eb 50%, #f8eaee 100%);
+    font-family: 'Montserrat', sans-serif;
+    color: var(--text-main);
+    padding: 30px 15px;
+    display: flex;
+    justify-content: center;
+    line-height: 1.5;
+  }
+
+  .price-wrapper {
+    background: #ffffff;
+    max-width: 1020px;
+    width: 100%;
+    border-radius: 28px;
+    box-shadow: 0 25px 50px -12px rgba(190, 24, 93, 0.12);
+    border: 1px solid var(--rose-border);
+    overflow: hidden;
+  }
+
+  /* Header Section */
+  .hero-header {
+    background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 50%, #fae8eb 100%);
+    padding: 40px 50px;
+    display: grid;
+    grid-template-columns: 210px 1fr;
+    gap: 35px;
+    align-items: center;
+    border-bottom: 2px solid #fbcfe8;
+  }
+
+  /* Photo Column with Clean White Background */
+  .photo-column {
+    background: #ffffff;
+    border-radius: 22px;
+    padding: 10px;
+    box-shadow: 0 12px 28px rgba(131, 24, 67, 0.12);
+    border: 2px solid #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .photo-frame {
+    width: 100%;
+    height: 235px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #ffffff;
+  }
+
+  .photo-frame img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    display: block;
+  }
+
+  .cosmostar-brand {
+    margin-top: 10px;
+    padding: 4px 14px;
+    background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 100%);
+    border: 1px solid #fbcfe8;
+    border-radius: 50px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 2.5px;
+    text-transform: uppercase;
+    color: var(--rose-deep);
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .badge-tag {
+    display: inline-block;
+    padding: 5px 16px;
+    background: #ffffff;
+    color: var(--rose-deep);
+    border: 1px solid #fbcfe8;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    border-radius: 50px;
+    margin-bottom: 10px;
+  }
+
+  .doctor-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 38px;
+    font-weight: 700;
+    color: var(--rose-deep);
+    line-height: 1.15;
+    margin-bottom: 6px;
+  }
+
+  .doctor-spec {
+    font-size: 15px;
+    color: #4b5563;
+    font-weight: 500;
+    margin-bottom: 16px;
+  }
+
+  .header-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 16px;
+  }
+
+  .h-badge {
+    background: rgba(255, 255, 255, 0.85);
+    border: 1px solid #fbcfe8;
+    color: var(--rose-accent);
+    font-size: 11.5px;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 6px;
+  }
+
+  .contacts-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    font-size: 13px;
+  }
+
+  .c-pill {
+    background: #ffffff;
+    color: var(--rose-deep);
+    padding: 8px 18px;
+    border-radius: 50px;
+    border: 1px solid #fbcfe8;
+    font-weight: 700;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    box-shadow: 0 4px 10px rgba(190, 24, 93, 0.08);
+    transition: all 0.2s;
+  }
+
+  .c-pill:hover {
+    background: var(--rose-accent);
+    color: #ffffff;
+  }
+
+  /* Body Content */
+  .content-body {
+    padding: 45px 50px;
+  }
+
+  .section-block {
+    margin-bottom: 45px;
+  }
+
+  .section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding-bottom: 12px;
+    border-bottom: 2px solid #fce7f3;
+    margin-bottom: 20px;
+  }
+
+  .sec-icon {
+    width: 36px;
+    height: 36px;
+    background: linear-gradient(135deg, #fbcfe8 0%, #f472b6 100%);
+    color: #ffffff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    box-shadow: 0 4px 10px rgba(190, 24, 93, 0.18);
+  }
+
+  .sec-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--rose-deep);
+  }
+
+  .sec-sub {
+    margin-left: auto;
+    font-size: 12px;
+    color: var(--text-muted);
+    font-weight: 500;
+  }
+
+  /* Tables & Lists */
+  .category-box {
+    background: #fffcfd;
+    border: 1px solid var(--rose-border);
+    border-radius: 16px;
+    padding: 20px 24px;
+    margin-bottom: 22px;
+  }
+
+  .cat-subhead {
+    font-size: 15px;
+    font-weight: 700;
+    color: var(--rose-accent);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .cat-subhead::before {
+    content: "";
+    display: inline-block;
+    width: 4px;
+    height: 14px;
+    background: var(--rose-accent);
+    border-radius: 2px;
+  }
+
+  .price-grid-2 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px 24px;
+  }
+
+  .price-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 10px 18px;
+  }
+
+  .price-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 8px 0;
+    border-bottom: 1px dashed #fce7f3;
+    gap: 12px;
+  }
+
+  .price-item:last-child {
+    border-bottom: none;
+  }
+
+  .item-title {
+    font-size: 13.5px;
+    color: var(--text-main);
+    font-weight: 500;
+  }
+
+  .item-desc-small {
+    display: block;
+    font-size: 11.5px;
+    color: var(--text-muted);
+    font-weight: 400;
+    margin-top: 2px;
+  }
+
+  .item-cost {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--rose-accent);
+    white-space: nowrap;
+  }
+
+  /* Highlight Cards (Author Protocols) */
+  .author-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 16px;
+    margin-top: 10px;
+  }
+
+  .author-card {
+    background: linear-gradient(135deg, #fff1f2 0%, #fdf2f4 100%);
+    border: 1px solid #fbcfe8;
+    border-radius: 14px;
+    padding: 16px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .author-card .title {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--rose-deep);
+    margin-bottom: 6px;
+  }
+
+  .author-card .formula {
+    font-size: 12px;
+    color: #4b5563;
+    line-height: 1.4;
+    margin-bottom: 12px;
+  }
+
+  .author-card .price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: var(--rose-accent);
+    text-align: right;
+  }
+
+  /* Note Box */
+  .price-notice {
+    background: #fff1f2;
+    border: 1px dashed #f472b6;
+    border-radius: 14px;
+    padding: 18px 22px;
+    font-size: 12.5px;
+    color: #4b5563;
+    line-height: 1.5;
+    margin-top: 20px;
+  }
+
+  /* Footer */
+  .price-footer {
+    background: linear-gradient(135deg, #fff1f2 0%, #fce7f3 100%);
+    padding: 25px 50px;
+    border-top: 2px solid #fbcfe8;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 15px;
+  }
+
+  .footer-left h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    color: var(--rose-deep);
+    font-weight: 700;
+  }
+
+  .footer-left p {
+    font-size: 12px;
+    color: var(--text-muted);
+  }
+
+  .footer-cta {
+    background: linear-gradient(135deg, var(--rose-accent) 0%, var(--rose-deep) 100%);
+    color: #ffffff;
+    text-decoration: none;
+    padding: 11px 26px;
+    border-radius: 50px;
+    font-size: 13px;
+    font-weight: 600;
+    box-shadow: 0 6px 16px rgba(190, 24, 93, 0.25);
+  }
+
+  @media (max-width: 768px) {
+    .hero-header {
+      grid-template-columns: 1fr;
+      text-align: center;
+      padding: 30px 20px;
+    }
+    .photo-column {
+      margin: 0 auto;
+      max-width: 220px;
+    }
+    .header-badges, .contacts-row {
+      justify-content: center;
+    }
+    .content-body {
+      padding: 30px 20px;
+    }
+    .price-grid-2 {
+      grid-template-columns: 1fr;
+    }
+    .price-footer {
+      flex-direction: column;
+      text-align: center;
+      padding: 20px;
+    }
+    .sec-sub {
+      display: none;
+    }
+  }
+
+  @media print {
+    body {
+      background: #ffffff;
+      padding: 0;
+    }
+    .price-wrapper {
+      box-shadow: none;
+      border: none;
+      max-width: 100%;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div class="price-wrapper">
+
+  <!-- HERO SECTION WITH DOCTOR PHOTO & COSMOSTAR BRAND -->
+  <div class="hero-header">
+    <div class="photo-column">
+      <div class="photo-frame">
+        <img src="IMG_6FF50A589074-1.jpg" alt="Старикова Анастасия Михайловна">
+      </div>
+      <div class="cosmostar-brand">✦ COSMOSTAR ✦</div>
+    </div>
+
+    <div class="hero-info">
+      <span class="badge-tag">Прейскурант услуг</span>
+      <h1 class="doctor-name">Старикова Анастасия Михайловна</h1>
+      <div class="doctor-spec">Врач-дерматовенеролог, врач-косметолог</div>
+
+      <div class="header-badges">
+        <span class="h-badge">💎 Передовые аппаратные технологии</span>
+        <span class="h-badge">🌸 Естественная эстетика</span>
+        <span class="h-badge">🛡 Доказательный подход</span>
+      </div>
+
+      <div class="contacts-row">
+        <a href="https://t.me/anastomoz10" target="_blank" class="c-pill">💬 Telegram: @anastomoz10</a>
+        <a href="https://instagram.com/dr.starikova_am" target="_blank" class="c-pill">📷 Instagram: @dr.starikova_am</a>
+        <span class="c-pill">📍 г. Москва</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- CONTENT -->
+  <div class="content-body">
+
+    <!-- 1. АППАРАТНЫЙ ЛИФТИНГ И RF-ТЕХНОЛОГИИ -->
+    <div class="section-block">
+      <div class="section-head">
+        <div class="sec-icon">⚡</div>
+        <h2 class="sec-title">Аппаратный лифтинг & RF-технологии</h2>
+        <span class="sec-sub">Volnewmer • Ultraformer MPT • Morpheus8</span>
+      </div>
+
+      <!-- Volnewmer -->
+      <div class="category-box">
+        <div class="cat-subhead">Монополярный RF-лифтинг Volnewmer</div>
+        <div class="price-grid-2">
+          <div class="price-item">
+            <span class="item-title">1 импульс</span>
+            <span class="item-cost">175 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Периорбитальная зона (глаза) <span class="item-desc-small">200 импульсов</span></span>
+            <span class="item-cost">35 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">300 импульсов</span></span>
+            <span class="item-cost">52 500 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">400 импульсов</span></span>
+            <span class="item-cost">70 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">500 импульсов</span></span>
+            <span class="item-cost">87 500 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">600 импульсов</span></span>
+            <span class="item-cost">105 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">800 импульсов</span></span>
+            <span class="item-cost">140 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">1000 импульсов</span></span>
+            <span class="item-cost">175 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо / Тело <span class="item-desc-small">1200 импульсов</span></span>
+            <span class="item-cost">210 000 ₽</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Сочетанные протоколы Volformer -->
+      <div class="category-box">
+        <div class="cat-subhead">Сочетанный лифтинг Volformer (Volnewmer + Ultraformer MPT)</div>
+        <div class="author-cards">
+          <div class="author-card">
+            <div class="title">Volformer Light</div>
+            <div class="formula">Volnewmer (200 линий) + Ultraformer MPT (400 линий)</div>
+            <div class="price">70 000 ₽</div>
+          </div>
+          <div class="author-card">
+            <div class="title">Volformer Medium</div>
+            <div class="formula">Volnewmer (300 линий) + Ultraformer MPT (400 линий)</div>
+            <div class="price">85 000 ₽</div>
+          </div>
+          <div class="author-card">
+            <div class="title">Volformer Max</div>
+            <div class="formula">Volnewmer (300 линий) + Ultraformer MPT (500 линий)</div>
+            <div class="price">95 000 ₽</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Ultraformer MPT -->
+      <div class="category-box">
+        <div class="cat-subhead">SMAS-лифтинг Ultraformer MPT (1 линия — 90 ₽)</div>
+        <div class="price-grid-2">
+          <div class="price-item">
+            <span class="item-title">Подбородок <span class="item-desc-small">300 линий</span></span>
+            <span class="item-cost">25 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо протокол «Лайт» <span class="item-desc-small">400 линий</span></span>
+            <span class="item-cost">35 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо протокол «Медиум» <span class="item-desc-small">500 линий</span></span>
+            <span class="item-cost">45 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Лицо протокол «Хард» <span class="item-desc-small">600 линий</span></span>
+            <span class="item-cost">54 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Живот</span>
+            <span class="item-cost">от 50 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Внутренняя / наружная поверхность бедра</span>
+            <span class="item-cost">от 50 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Ягодицы</span>
+            <span class="item-cost">от 50 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">«Вдовий горб» (холка)</span>
+            <span class="item-cost">30 000 ₽</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Morpheus 8 -->
+      <div class="category-box">
+        <div class="cat-subhead">Микроигольчатый RF-лифтинг Morpheus8</div>
+        <div class="price-grid-2">
+          <div class="price-item"><span class="item-title">Лицо полностью</span><span class="item-cost">35 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Шея</span><span class="item-cost">40 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Декольте</span><span class="item-cost">45 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо + шея</span><span class="item-cost">55 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо + декольте</span><span class="item-cost">60 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо + шея + декольте</span><span class="item-cost">65 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Периорбитальная зона</span><span class="item-cost">35 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Кисти рук</span><span class="item-cost">35 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Колени</span><span class="item-cost">35 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Внутренняя поверхность бедра</span><span class="item-cost">50 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Ягодицы</span><span class="item-cost">50 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Живот</span><span class="item-cost">60 000 ₽</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 2. ФОТОТЕРАПИЯ BBL SCITON -->
+    <div class="section-block">
+      <div class="section-head">
+        <div class="sec-icon">✨</div>
+        <h2 class="sec-title">Фототерапия BBL Sciton (США)</h2>
+        <span class="sec-sub">Forever Clear • Forever Young • SkinTyte</span>
+      </div>
+
+      <!-- BBL Сосуды & Пигмент -->
+      <div class="category-box">
+        <div class="cat-subhead">BBL Сосуды & Пигмент (двухступенчатое воздействие)</div>
+        <div class="price-grid-2">
+          <div class="price-item"><span class="item-title">Анти-акне программа Forever Clear</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо полностью</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо и шея</span><span class="item-cost">28 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо, шея и декольте</span><span class="item-cost">35 000 ₽</span></div>
+        </div>
+      </div>
+
+      <!-- BBL Forever Young -->
+      <div class="category-box">
+        <div class="cat-subhead">BBL Forever Young (Генное омоложение по Стэнфорду)</div>
+        <div class="price-grid-3">
+          <div class="price-item"><span class="item-title">Лицо</span><span class="item-cost">22 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Шея</span><span class="item-cost">20 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Декольте</span><span class="item-cost">20 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо и шея</span><span class="item-cost">30 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо, шея и декольте</span><span class="item-cost">40 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лоб</span><span class="item-cost">10 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Щёки</span><span class="item-cost">20 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Кисти рук</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Плечи</span><span class="item-cost">30 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Живот</span><span class="item-cost">30 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Спина (до лопаток)</span><span class="item-cost">30 000 ₽</span></div>
+        </div>
+      </div>
+
+      <!-- BBL Skin Tyte -->
+      <div class="category-box">
+        <div class="cat-subhead">BBL SkinTyte (Инфракрасный термолифтинг)</div>
+        <div class="price-grid-3">
+          <div class="price-item"><span class="item-title">Лицо (без век)</span><span class="item-cost">31 500 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо (включая веки)</span><span class="item-cost">36 800 ₽</span></div>
+          <div class="price-item"><span class="item-title">Веки</span><span class="item-cost">14 700 ₽</span></div>
+          <div class="price-item"><span class="item-title">Подбородок</span><span class="item-cost">10 500 ₽</span></div>
+          <div class="price-item"><span class="item-title">Щёки</span><span class="item-cost">21 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Шея</span><span class="item-cost">21 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Декольте</span><span class="item-cost">21 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо + шея</span><span class="item-cost">42 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Лицо + шея + подбородок</span><span class="item-cost">57 800 ₽</span></div>
+          <div class="price-item"><span class="item-title">Кисти рук</span><span class="item-cost">18 900 ₽</span></div>
+          <div class="price-item"><span class="item-title">Живот</span><span class="item-cost">31 500 ₽</span></div>
+          <div class="price-item"><span class="item-title">Живот ½</span><span class="item-cost">21 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Локти</span><span class="item-cost">21 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Внутренняя часть бедра</span><span class="item-cost">21 000 ₽</span></div>
+        </div>
+      </div>
+
+      <!-- Комплексные программы BBL -->
+      <div class="category-box">
+        <div class="cat-subhead">Комплексные авторские протоколы BBL + инъекции</div>
+        <div class="author-cards">
+          <div class="author-card">
+            <div class="title">Протокол «Антиакне»</div>
+            <div class="formula">BBL лицо + мезотерапия Mesoline Clear</div>
+            <div class="price">25 000 ₽</div>
+          </div>
+          <div class="author-card">
+            <div class="title">Протокол «Антипигмент»</div>
+            <div class="formula">BBL лицо + мезотерапия Filorga NCTF 135</div>
+            <div class="price">27 000 ₽</div>
+          </div>
+          <div class="author-card">
+            <div class="title">Протокол «Глубокое омоложение»</div>
+            <div class="formula">BBL Forever Young + биоревитализация Bellarti Nucleo</div>
+            <div class="price">35 000 ₽</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3. ИНЪЕКЦИОННАЯ КОСМЕТОЛОГИЯ -->
+    <div class="section-block">
+      <div class="section-head">
+        <div class="sec-icon">💉</div>
+        <h2 class="sec-title">Инъекционная косметология</h2>
+        <span class="sec-sub">Контурная пластика • Ботулинотерапия • Липолитики • Коллаген</span>
+      </div>
+
+      <!-- Контурная пластика & Ботокс & Липолитики -->
+      <div class="category-box">
+        <div class="cat-subhead">Контурная пластика, Ботулинотерапия & Липолитики</div>
+        <div class="price-grid-2">
+          <div class="price-item">
+            <span class="item-title">Контурная пластика губ <span class="item-desc-small">Belotero / Stylage / Novacutan</span></span>
+            <span class="item-cost">19 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Контурная пластика лица <span class="item-desc-small">Скулы, подбородок, носогубные складки, носослёзная борозда</span></span>
+            <span class="item-cost">23 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Липолитики (лицо / тело) <span class="item-desc-small">Устранение локальных жировых отложений</span></span>
+            <span class="item-cost">от 10 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Ботулинотерапия: Ксеомин / Релатокс / Миотокс</span>
+            <span class="item-cost">350 ₽ / ед.</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Ботулинотерапия: Диспорт</span>
+            <span class="item-cost">120 ₽ / ед.</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Коллагеностимуляция -->
+      <div class="category-box">
+        <div class="cat-subhead">Коллагеностимуляция (Radiesse & Collost)</div>
+        <div class="price-grid-2">
+          <div class="price-item">
+            <span class="item-title">Radiesse (Радиес), 1.5 мл</span>
+            <span class="item-cost">30 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Radiesse (Радиес), 3.0 мл</span>
+            <span class="item-cost">50 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Collost Micro</span>
+            <span class="item-cost">18 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Collost 7%</span>
+            <span class="item-cost">15 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Collost 15%</span>
+            <span class="item-cost">18 000 ₽</span>
+          </div>
+          <div class="price-item">
+            <span class="item-title">Сочетанный протокол: Collost Micro + NCTF 135</span>
+            <span class="item-cost">25 000 ₽</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Биоревитализация -->
+      <div class="category-box">
+        <div class="cat-subhead">Биоревитализация & Биорепарация</div>
+        <div class="price-grid-3">
+          <div class="price-item"><span class="item-title">Bellarti Nucleo 7.5</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Nucleo 20</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Lift</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Vita</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Vita Plus</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Hydrate</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Amino</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Bellarti Amino Plus</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Novacutan SBio</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Novacutan YBio</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Novacutan Eye</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Novacutan Gentle</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Novacutan Prima</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Novacutan Master</span><span class="item-cost">18 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Meso-Xanthin F199</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Meso-Wharton P199</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Revi (Style / Silk / Strong / Eye)</span><span class="item-cost">17 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Profhilo (Профайло)</span><span class="item-cost">21 000 ₽</span></div>
+        </div>
+      </div>
+
+      <!-- Мезотерапия -->
+      <div class="category-box">
+        <div class="cat-subhead">Мезотерапия</div>
+        <div class="price-grid-3">
+          <div class="price-item"><span class="item-title">Filorga NCTF 135</span><span class="item-cost">11 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Viscoderm Skinko</span><span class="item-cost">10 000 ₽</span></div>
+          <div class="price-item"><span class="item-title">Pluryal Mesoline</span><span class="item-cost">10 000 ₽</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. ЭСТЕТИЧЕСКИЙ УХОД И ПИЛИНГИ -->
+    <div class="section-block">
+      <div class="section-head">
+        <div class="sec-icon">🌿</div>
+        <h2 class="sec-title">Эстетическая косметология & Пилинги</h2>
+        <span class="sec-sub">Протоколы чисток • Химические пилинги</span>
+      </div>
+
+      <div class="category-box">
+        <div class="cat-subhead">Профессиональные чистки лица</div>
+        <div class="author-cards">
+          <div class="author-card">
+            <div class="title">Протокол 1. «Базовый минимум»</div>
+            <div class="formula">Комбинированная чистка + успокаивающая восстанавливающая маска</div>
+            <div class="price">9 000 ₽</div>
+          </div>
+          <div class="author-card">
+            <div class="title">Протокол 2. «Очищение & Пилинг»</div>
+            <div class="formula">Комбинированная чистка + химический пилинг по типу кожи + успокаивающая маска</div>
+            <div class="price">12 000 ₽</div>
+          </div>
+          <div class="author-card">
+            <div class="title">Протокол 3. «Роскошный максимум»</div>
+            <div class="formula">Комбинированная чистка + прицельная мезотерапия + пилинг + успокаивающая маска</div>
+            <div class="price">20 000 ₽</div>
+          </div>
+        </div>
+
+        <div style="margin-top: 20px;" class="price-item">
+          <span class="item-title">Химические пилинги (по показаниям кожи)</span>
+          <span class="item-cost">от 7 000 ₽</span>
+        </div>
+      </div>
+
+      <div class="price-notice">
+        <strong>💡 Информация для пациентов:</strong><br>
+        Все процедуры проводятся строго по предварительной консультации с оценкой показаний и противопоказаний. Все инъекционные препараты сертифицированы и вскрываются в вашем присутствии.
+      </div>
+    </div>
+
+  </div>
+
+  <!-- FOOTER -->
+  <div class="price-footer">
+    <div class="footer-left">
+      <h4>Анастасия Михайловна Старикова</h4>
+      <p>Запись на очный приём и консультацию: <strong>@anastomoz10</strong></p>
+    </div>
+    <a href="https://t.me/anastomoz10" target="_blank" class="footer-cta">Записаться на процедуру</a>
+  </div>
+
+</div>
+
+</body>
+</html>
